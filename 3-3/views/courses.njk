@@ -11,46 +11,21 @@
   </div>
 
   <div class="cards">
-    <div class="card" id="react-material-ui/">
-      <div class="card__image-container">
-        <img src="https://blog.rocketseat.com.br/content/images/2018/12/react-material-ui.png"/>
-      </div>
-      <div class="card__content">
-        <p class="card__title">Integração do Material UI com ReactJS</p>
-      </div>
-      <div class="card__info">
-        <p class="card__autor">por Higo Ribeiro</p>
-        <p class="card__hour">5min</p>
-      </div>
-    </div>
 
-    <div class="card" id="ambiente-desenvolvimento-javascript/">
-      <div class="card__image-container">
-        <img src="https://blog.rocketseat.com.br/content/images/2018/12/ambiente-desenvolvimento-javascript.png"/>
+    {% for item in items %}
+      <div class="card" id="{{item.id}}">
+        <div class="card__image-container">
+          <img src="https://blog.rocketseat.com.br/content/images/2018/12/{{item.id}}.png"/>
+        </div>
+        <div class="card__content">
+          <p class="card__title">{{item.title}}</p>
+        </div>
+        <div class="card__info">
+          <p class="card__autor">{{item.author}}</p>
+          <p class="card__hour">{{item.hour}}</p>
+        </div>
       </div>
-      <div class="card__content">
-        <p class="card__title">
-          Ambiente Javascript: Dicas, VSCode e terminal
-        </p>
-      </div>
-      <div class="card__info">
-        <p class="card__autor">por Diego Fernandes</p>
-        <p class="card__hour">4min</p>
-      </div>
-    </div>
-
-    <div class="card" id="navegacao-react-native/">
-      <div class="card__image-container">
-        <img src="https://blog.rocketseat.com.br/content/images/2019/07/Tipos-de-navegac-a-o-no-React-Native.png"/>
-      </div>
-      <div class="card__content">
-        <p class="card__title">Tipos de navegação no React Native</p>
-      </div>
-      <div class="card__info">
-        <p class="card__autor">por Carlos Levir</p>
-        <p class="card__hour">4min</p>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 
   <div class="modal-overlay">
