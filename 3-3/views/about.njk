@@ -7,8 +7,8 @@
 {% block content %}
   <main class="main content">
     <div class="logo">
-      <img src="https://media-exp1.licdn.com/dms/image/C560BAQFU-ZKLLdANXg/company-logo_200_200/0?e=1609372800&v=beta&t=MVXb_ey8pT8NpMZXOJwMiY1QErQnxSCd7NEiiWPb9Rs"/>
-      <h1 class="logo-title">Rocketseat</h1>
+      <img src="{{about.avatar_company}}"/>
+      <h1 class="logo-title">{{about.name_company}}</h1>
     </div>
     <div class="main-description">
       <p>
@@ -41,15 +41,11 @@
   <footer class="footer">
     <h3 class="footer-title">Siga-nos nas nossas redes sociais:</h3>
     <ul class="footer-list">
-      <li class="footer-list-item">
-        <a href="https://github.com/Rocketseat">Github</a>
-      </li>
-      <li class="footer-list-item">
-        <a href="https://www.instagram.com/rocketseat_oficial/">Instragam</a>
-      </li>
-      <li class="footer-list-item">
-        <a href="https://www.facebook.com/rocketseat">Facebook</a>
-      </li>
+      {% for link in about.links %}
+        <li class="footer-list-item">
+          <a href="{{link.url}}" target="_BLANK">{{link.name}}</a>
+        </li>
+      {% endfor %}
     </ul>
   </footer>
 {% endblock %}
