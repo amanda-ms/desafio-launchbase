@@ -1,0 +1,30 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>Posts - Plataforma</title>
+{% endblock %}
+
+{% block content %}
+  <div id="wrapper">
+    <h1 class="title">Posts</h1>
+  </div>
+
+  <div class="cards">
+    {% for item in items %}
+      <div class="card" id="{{item.id}}">
+        <div class="card__image-container">
+          <img src="https://blog.rocketseat.com.br/content/images/2018/12/{{item.id}}.png"/>
+        </div>
+        <div class="card__content">
+          <p class="card__title">{{item.title}}</p>
+        </div>
+        <div class="card__info">
+          <p class="card__autor">{{item.author}}</p>
+          <p class="card__hour">{{item.hour}}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <script src="./script.js"></script>
+{% endblock %}
